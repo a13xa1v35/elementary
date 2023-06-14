@@ -55,8 +55,8 @@ It works differently according to the table materialization:
 - **Incremental models and sources** - The values of the full `days_back` period is calculated on the first test run, and on full refresh. The following test runs will only calculate the values of the `backfill_days` period.
 
 **Changes from default:**
-- **Full time buckets** - Elementary will increase the `days_back` automatically to insure full time buckets. For example if the `time_bucket` of the test is `period: week`, and 14 `days_back` result in Tuesday, the test will collect 2 more days back to complete a week (starting on Sunday).  
-- **Seasonality training set** - If seasonality is configured, Elementary will increase the `days_back` automatically to insure there are enough training set values to calculate an anomaly. For example if the `seasonality` of the test is `day_of_week`, `days_back` will be increased to insure enough Sundays, Mondays, Tuesdays, etc. to calculate an anomaly for each.
+- **Full time buckets** - Elementary will increase the `days_back` automatically to ensure full time buckets. For example if the `time_bucket` of the test is `period: week`, and 14 `days_back` result in Tuesday, the test will collect 2 more days back to complete a week (starting on Sunday).  
+- **Seasonality training set** - If seasonality is configured, Elementary will increase the `days_back` automatically to ensure there are enough training set values to calculate an anomaly. For example if the `seasonality` of the test is `day_of_week`, `days_back` will be increased to ensure enough Sundays, Mondays, Tuesdays, etc. to calculate an anomaly for each.
 
 #### The impact of changing `days_back`
 
